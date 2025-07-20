@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet compatible singles in your area - Our smart matching system finds your perfect partner">
+    <title>Find Your Perfect Match | Local Singles Dating</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff3b7d;
+            --primary-dark: #e62e6b;
+            --secondary: #3b82f6;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 40px 30px;
+            background: var(--dark);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .highlight {
+            color: var(--primary);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+            color: var(--gray);
+            text-align: center;
+        }
+        
+        p {
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        .benefits {
+            margin: 30px 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-icon {
+            background: rgba(255, 59, 125, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .benefit-content h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .benefit-content p {
+            text-align: left;
+            margin-bottom: 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            margin: 30px 0 20px;
+            transition: background 0.2s;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-dark);
+        }
+        
+        .testimonial {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        
+        .author-info {
+            font-size: 0.9rem;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: white;
+        }
+        
+        .author-details {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+        
+        .security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            color: var(--gray);
+            font-size: 0.8rem;
+            gap: 10px;
+        }
+        
+        .security-badge svg {
+            color: var(--success);
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.8rem;
+            width: 100%;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Find Your <span class="highlight">Perfect Match</span> Today</h1>
+        <p class="subtitle">Join thousands of local singles finding meaningful connections</p>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">12,843+</div>
+                <div class="stat-label">Active Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">87%</div>
+                <div class="stat-label">Match Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2.1M</div>
+                <div class="stat-label">Connections</div>
+            </div>
+        </div>
+        
+        <div class="benefits">
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <div class="benefit-content">
+                    <h3>Smart Matching Algorithm</h3>
+                    <p>Our system analyzes compatibility factors to suggest your ideal partners.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🔒</div>
+                <div class="benefit-content">
+                    <h3>Verified Profiles Only</h3>
+                    <p>Every member is manually verified to ensure authentic connections.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">💬</div>
+                <div class="benefit-content">
+                    <h3>Quality Conversations</h3>
+                    <p>Break the ice with our conversation starters and messaging tools.</p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="https://sparkleslove.com/DmdPkJhv?aid=fzfbpffzab&kid=gkkxadkxfdg" class="cta-button" target="_blank">
+            Get Started - Find Your Match Now
+        </a>
+        
+        <div class="testimonial">
+            <p class="testimonial-text">"I met my partner after just one week! The quality of matches was so much better than other dating apps I've tried."</p>
+            <div class="testimonial-author">
+                <div class="author-avatar">SD</div>
+                <div class="author-info">
+                    <div class="author-name">Sarah D.</div>
+                    <div class="author-details">Found love in 2023</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="security-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+            </svg>
+            18+ Only • Privacy Protected • SSL Secure
+        </div>
+    </div>
+    
+    <footer>
+        © 2023 PerfectMatch Connection. All rights reserved.
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+            <a href="#">Safety Tips</a>
+        </div>
+    </footer>
+</body>
+</html>
